@@ -23,6 +23,17 @@ public class Main {
             JsonArray sections = (JsonArray)jsonOriginal.get("section");
             System.out.println("Sections Found (JSON): " + sections.size());
             
+            
+            // Convert CSV data to JSON and print the result
+            String jsonStringFromCsv = schedule.convertCsvToJsonString(csvOriginal); // Convert CSV to JSON string
+            System.out.println("\nConverted JSON from CSV:");
+            System.out.println(jsonStringFromCsv); // Print the converted JSON string
+
+            // Convert JSON data back to CSV and print the result
+            String csvStringFromJson = schedule.convertJsonToCsvString(jsonOriginal); // Convert JSON back to CSV string
+            System.out.println("\nConverted CSV from JSON:");
+            System.out.println(csvStringFromJson); // Print the converted CSV string
+
         }
         catch (Exception e) { e.printStackTrace(); }
             
